@@ -1,6 +1,5 @@
 package ru.jurden.calcs.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import ru.jurden.calcs.enums.MortalityTableType;
 
@@ -12,12 +11,17 @@ import java.util.Map;
  * <p>Таблица смертности - таблица, которая для каждого возраста показывает вероятность того, что человек этого
  * возраста умрет до своего следующего дня рождения (вероятность смерти)</p>
  */
-@AllArgsConstructor
 public class MortalityTable {
     @Getter
     private final MortalityTableType tableType;
     private final Map<Integer, Integer> lx;
     private final Map<Integer, Integer> dx;
+
+    public MortalityTable(MortalityTableType tableType, Map<Integer, Integer> lx, Map<Integer, Integer> dx) {
+        this.tableType = tableType;
+        this.lx = lx;
+        this.dx = dx;
+    }
 
     public int getMinAge() {
         return lx.keySet().stream().min(Integer::compareTo).orElseThrow();

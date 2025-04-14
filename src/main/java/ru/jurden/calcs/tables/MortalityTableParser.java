@@ -1,4 +1,4 @@
-package ru.jurden.calcs.parsers;
+package ru.jurden.calcs.tables;
 
 import lombok.extern.slf4j.Slf4j;
 import org.w3c.dom.Document;

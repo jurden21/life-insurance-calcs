@@ -2,8 +2,8 @@ package ru.jurden.calcs.models;
 
 import org.junit.jupiter.api.Test;
 import ru.jurden.calcs.enums.MortalityTableType;
-import ru.jurden.calcs.parsers.MortalityTableFactory;
-import ru.jurden.calcs.parsers.MortalityTableParser;
+import ru.jurden.calcs.tables.MortalityTableFactory;
+import ru.jurden.calcs.tables.MortalityTableParser;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

@@ -1,14 +1,12 @@
 package ru.jurden.calcs.enums;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 /**
  * <p>Type of Mortality Table</p>
  * <p>Тип таблицы смертности</p>
  */
 @Getter
-@RequiredArgsConstructor
 public enum MortalityTableType {
 
     MALE("male-mortality-table.xml"),
@@ -17,4 +15,17 @@ public enum MortalityTableType {
     ;
 
     private final String resourceName;
+
+    MortalityTableType(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
+    public static MortalityTableType getByName(String name) {
+        for (MortalityTableType mortalityTableType : MortalityTableType.values()) {
+            if (mortalityTableType.name().equalsIgnoreCase(name)) {
+                return mortalityTableType;
+            }
+        }
+        return null;
+    }
 }
