@@ -1,8 +1,8 @@
-package ru.jurden.calcs.tables;
+package ru.jurden.calcs.table;
 
 import lombok.extern.slf4j.Slf4j;
 import ru.jurden.calcs.enums.MortalityTableType;
-import ru.jurden.calcs.models.MortalityTable;
+import ru.jurden.calcs.model.MortalityTable;
 
 import java.io.InputStream;
 import java.util.Objects;

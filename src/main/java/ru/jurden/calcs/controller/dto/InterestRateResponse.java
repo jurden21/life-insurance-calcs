@@ -1,9 +1,9 @@
-package ru.jurden.calcs.entities;
+package ru.jurden.calcs.controller.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import ru.jurden.calcs.models.InterestRate;
+import ru.jurden.calcs.model.InterestRate;
 
 @Data
 @Accessors(chain = true)

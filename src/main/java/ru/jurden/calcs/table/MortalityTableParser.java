@@ -1,4 +1,4 @@
-package ru.jurden.calcs.tables;
+package ru.jurden.calcs.table;
 
 import lombok.extern.slf4j.Slf4j;
 import org.w3c.dom.Document;
@@ -6,7 +6,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import ru.jurden.calcs.enums.MortalityTableType;
-import ru.jurden.calcs.models.MortalityTable;
+import ru.jurden.calcs.model.MortalityTable;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;

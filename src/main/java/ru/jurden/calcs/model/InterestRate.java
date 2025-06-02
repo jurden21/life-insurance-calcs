@@ -1,4 +1,4 @@
-package ru.jurden.calcs.models;
+package ru.jurden.calcs.model;
 
 /**
  * <p>Annual effective interest rate.</p>

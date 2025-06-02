@@ -1,4 +1,4 @@
-package ru.jurden.calcs.controllers;
+package ru.jurden.calcs.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -6,11 +6,11 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.jurden.calcs.entities.InterestRateRequest;
-import ru.jurden.calcs.entities.InterestRateResponse;
-import ru.jurden.calcs.entities.MortalityTableRequest;
-import ru.jurden.calcs.entities.MortalityTableResponse;
-import ru.jurden.calcs.services.CalculationService;
+import ru.jurden.calcs.controller.dto.InterestRateRequest;
+import ru.jurden.calcs.controller.dto.InterestRateResponse;
+import ru.jurden.calcs.controller.dto.MortalityTableRequest;
+import ru.jurden.calcs.controller.dto.MortalityTableResponse;
+import ru.jurden.calcs.service.CalculationService;
 
 @RestController
 @AllArgsConstructor

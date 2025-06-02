@@ -1,4 +1,4 @@
-package ru.jurden.calcs.controllers;
+package ru.jurden.calcs.controller;
 
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,7 +7,7 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import ru.jurden.calcs.entities.ErrorResponse;
+import ru.jurden.calcs.controller.dto.ErrorResponse;
 import ru.jurden.calcs.enums.ErrorCode;
 
 @Slf4j

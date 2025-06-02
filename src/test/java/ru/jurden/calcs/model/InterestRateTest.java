@@ -1,4 +1,4 @@
-package ru.jurden.calcs.models;
+package ru.jurden.calcs.model;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

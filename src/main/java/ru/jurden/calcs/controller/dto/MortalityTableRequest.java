@@ -1,4 +1,4 @@
-package ru.jurden.calcs.entities;
+package ru.jurden.calcs.controller.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Max;

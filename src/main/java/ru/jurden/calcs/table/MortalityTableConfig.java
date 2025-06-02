@@ -1,10 +1,10 @@
-package ru.jurden.calcs.tables;
+package ru.jurden.calcs.table;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import ru.jurden.calcs.enums.MortalityTableType;
-import ru.jurden.calcs.models.MortalityTable;
+import ru.jurden.calcs.model.MortalityTable;
 
 @Slf4j
 @Component

@@ -1,4 +1,4 @@
-package ru.jurden.calcs.models;
+package ru.jurden.calcs.model;
 
 import lombok.Getter;
 import ru.jurden.calcs.enums.MortalityTableType;
