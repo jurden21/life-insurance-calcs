@@ -21,28 +21,28 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-class DeathFixedTermRiskTest {
+class MortalityFixedTermRiskTest {
 
     private static final double DELTA = 1e-10;
 
     private final MortalityTableParser parser = new MortalityTableParser();
     private final MortalityTableFactory factory = new MortalityTableFactory(parser);
-    private DeathFixedTermRisk risk;
+    private MortalityFixedTermRisk risk;
 
     @Test
     void riskType() {
         InterestRate interestRate = new InterestRate(5);
         MortalityTable mortalityTable = factory.loadTable(MortalityTableType.MALE);
-        risk = new DeathFixedTermRisk(interestRate, List.of(mortalityTable));
+        risk = new MortalityFixedTermRisk(interestRate, List.of(mortalityTable));
         RiskType riskType = risk.riskType();
-        assertEquals("DEATH", riskType.name());
+        assertEquals("MORTALITY", riskType.name());
     }
 
     @Test
     void contractType() {
         InterestRate interestRate = new InterestRate(5);
         MortalityTable mortalityTable = factory.loadTable(MortalityTableType.MALE);
-        risk = new DeathFixedTermRisk(interestRate, List.of(mortalityTable));
+        risk = new MortalityFixedTermRisk(interestRate, List.of(mortalityTable));
         ContractType contractType = risk.contractType();
         assertEquals("FIXED_TERM", contractType.name());
     }
@@ -52,7 +52,7 @@ class DeathFixedTermRiskTest {
     void calculate(double percent, MortalityTableType mortalityTableType, int age, int contractTerm, double value) {
         InterestRate interestRate = new InterestRate(percent);
         MortalityTable mortalityTable = factory.loadTable(mortalityTableType);
-        risk = new DeathFixedTermRisk(interestRate, List.of(mortalityTable));
+        risk = new MortalityFixedTermRisk(interestRate, List.of(mortalityTable));
         CalculationContext context = new CalculationContext()
                 .setAge(age)
                 .setContractTerm(contractTerm)

@@ -18,28 +18,28 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class DeathOpenEndedRiskTest {
+class MortalityOpenEndedRiskTest {
 
     private static final double DELTA = 1e-10;
 
     private final MortalityTableParser parser = new MortalityTableParser();
     private final MortalityTableFactory factory = new MortalityTableFactory(parser);
-    private DeathOpenEndedRisk risk;
+    private MortalityOpenEndedRisk risk;
 
     @Test
     void riskType() {
         InterestRate interestRate = new InterestRate(5);
         MortalityTable mortalityTable = factory.loadTable(MortalityTableType.MALE);
-        risk = new DeathOpenEndedRisk(interestRate, List.of(mortalityTable));
+        risk = new MortalityOpenEndedRisk(interestRate, List.of(mortalityTable));
         RiskType riskType = risk.riskType();
-        assertEquals("DEATH", riskType.name());
+        assertEquals("MORTALITY", riskType.name());
     }
 
     @Test
     void contractType() {
         InterestRate interestRate = new InterestRate(5);
         MortalityTable mortalityTable = factory.loadTable(MortalityTableType.MALE);
-        risk = new DeathOpenEndedRisk(interestRate, List.of(mortalityTable));
+        risk = new MortalityOpenEndedRisk(interestRate, List.of(mortalityTable));
         ContractType contractType = risk.contractType();
         assertEquals("OPEN_ENDED", contractType.name());
     }
@@ -49,7 +49,7 @@ class DeathOpenEndedRiskTest {
     void calculate(double percent, MortalityTableType mortalityTableType, int age, double value) {
         InterestRate interestRate = new InterestRate(percent);
         MortalityTable mortalityTable = factory.loadTable(mortalityTableType);
-        risk = new DeathOpenEndedRisk(interestRate, List.of(mortalityTable));
+        risk = new MortalityOpenEndedRisk(interestRate, List.of(mortalityTable));
         CalculationContext context = new CalculationContext()
                 .setAge(age)
                 .setMortalityTableType(mortalityTableType);

@@ -12,12 +12,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class DeathFixedTermRisk implements Risk {
+public class MortalityFixedTermRisk implements Risk {
 
     private final InterestRate interestRate;
     private final Map<MortalityTableType, MortalityTable> mortalityTables;
 
-    public DeathFixedTermRisk(InterestRate interestRate, List<MortalityTable> mortalityTables) {
+    public MortalityFixedTermRisk(InterestRate interestRate, List<MortalityTable> mortalityTables) {
         this.interestRate = interestRate;
         this.mortalityTables = mortalityTables.stream()
                 .collect(Collectors.toMap(MortalityTable::getTableType,
@@ -26,7 +26,7 @@ public class DeathFixedTermRisk implements Risk {
 
     @Override
     public RiskType riskType() {
-        return RiskType.DEATH;
+        return RiskType.MORTALITY;
     }
 
     @Override
