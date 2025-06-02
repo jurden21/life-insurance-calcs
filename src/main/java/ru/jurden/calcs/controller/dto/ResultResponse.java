@@ -13,21 +13,21 @@ import java.util.stream.Collectors;
 @Data
 @Accessors(chain = true)
 @AllArgsConstructor
-public class ErrorResponse {
+public class ResultResponse {
     @JsonProperty("code")
     private Integer code;
     @JsonProperty("message")
     private String message;
 
-    public static ErrorResponse of(BindingResult bindingResult) {
-        return new ErrorResponse(ErrorCode.VALIDATION_ERROR.getCode(),
+    public static ResultResponse of(BindingResult bindingResult) {
+        return new ResultResponse(ErrorCode.VALIDATION_ERROR.getCode(),
                 bindingResult.getFieldErrors().stream()
                         .map(DefaultMessageSourceResolvable::getDefaultMessage)
                         .collect(Collectors.joining("; ")));
     }
 
-    public static ErrorResponse of(ErrorCode errorCode) {
-        return new ErrorResponse(errorCode.getCode(), errorCode.getMessage());
+    public static ResultResponse of(ErrorCode errorCode) {
+        return new ResultResponse(errorCode.getCode(), errorCode.getMessage());
     }
 
 }

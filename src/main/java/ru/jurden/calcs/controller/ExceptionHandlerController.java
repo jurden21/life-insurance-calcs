@@ -7,7 +7,7 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import ru.jurden.calcs.controller.dto.ErrorResponse;
+import ru.jurden.calcs.controller.dto.ResultResponse;
 import ru.jurden.calcs.enums.ErrorCode;
 
 @Slf4j
@@ -16,14 +16,14 @@ import ru.jurden.calcs.enums.ErrorCode;
 public class ExceptionHandlerController {
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<ErrorResponse> handleHttpMessageNotReadableExceptions() {
-        ErrorResponse errorResponse = ErrorResponse.of(ErrorCode.INCORRECT_BODY);
-        return ResponseEntity.badRequest().body(errorResponse);
+    public ResponseEntity<ResultResponse> handleHttpMessageNotReadableExceptions() {
+        ResultResponse resultResponse = ResultResponse.of(ErrorCode.INCORRECT_BODY);
+        return ResponseEntity.badRequest().body(resultResponse);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ErrorResponse> handleValidationExceptions(MethodArgumentNotValidException ex) {
-        ErrorResponse errorResponse = ErrorResponse.of(ex.getBindingResult());
-        return ResponseEntity.badRequest().body(errorResponse);
+    public ResponseEntity<ResultResponse> handleValidationExceptions(MethodArgumentNotValidException ex) {
+        ResultResponse resultResponse = ResultResponse.of(ex.getBindingResult());
+        return ResponseEntity.badRequest().body(resultResponse);
     }
 }

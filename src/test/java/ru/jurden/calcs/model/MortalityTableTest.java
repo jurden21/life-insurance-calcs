@@ -1,6 +1,8 @@
 package ru.jurden.calcs.model;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import ru.jurden.calcs.enums.MortalityTableType;
 import ru.jurden.calcs.table.MortalityTableFactory;
 import ru.jurden.calcs.table.MortalityTableParser;
@@ -8,6 +10,7 @@ import ru.jurden.calcs.table.MortalityTableParser;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@ExtendWith(MockitoExtension.class)
 class MortalityTableTest {
 
     @Test
